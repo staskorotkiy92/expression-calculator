@@ -4,7 +4,17 @@ function eval() {
 }
 
 function expressionCalculator(expr) {
-    // write your solution here
+    
+    return parseFloat(expr.replace(/(\d+)[/+*-](\d+)/g, function (a, b, c){
+      console.log(a + "-a");
+      console.log(b + "-b");
+      console.log(c + "-c");
+        if (a.includes('+')) return +b + +c;
+        if (a.includes('-')) return parseFloat(b-c);
+        if (a.includes('*')) return parseFloat(b*c);
+        if (a.includes('/'))  return parseFloat(b/c);
+     
+    }));
 }
 
 module.exports = {
